@@ -1,12 +1,9 @@
 GIT
-  remote: git://github.com/zachfeldman/hue.git
-  revision: 3d6ef3912bc9222488dd30f15289f315358e8815
+  remote: git://github.com/dainon/nest_thermostat.git
+  revision: 70d0ed25e3f2b56b061c5efec6f634f7911c1a40
   specs:
-    hue (0.1.5)
-      curb
-      json (= 1.8.1)
-      log_switch (= 0.4.0)
-      thor
+    nest_thermostat (0.0.5)
+      httparty (~> 0.8.3)
 
 GIT
   remote: git://github.com/zachfeldman/uber_api.git
@@ -39,6 +36,7 @@ GEM
       ffi (~> 1.0, >= 1.0.11)
     coderay (1.1.0)
     color (1.7.1)
+    colorable (0.2.0)
     curb (0.8.7)
     daemons (1.2.2)
     faraday (0.9.1)
@@ -50,6 +48,11 @@ GEM
     httparty (0.8.3)
       multi_json (~> 1.0)
       multi_xml
+    hue (0.1.5)
+      curb
+      json
+      log_switch (= 0.4.0)
+      thor
     i18n (0.7.0)
     json (1.8.1)
     log_switch (0.4.0)
@@ -58,8 +61,6 @@ GEM
     multi_json (1.11.0)
     multi_xml (0.5.5)
     multipart-post (2.0.0)
-    nest_thermostat (0.0.4)
-      httparty (~> 0.8.3)
     numbers_in_words (0.2.0)
       activesupport
     pg (0.18.1)
@@ -91,6 +92,7 @@ GEM
     tilt (2.0.1)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
+    unicode (0.4.4.2)
     watir-webdriver (0.7.0)
       selenium-webdriver (>= 2.45)
     websocket (1.2.1)
@@ -101,10 +103,11 @@ PLATFORMS
 DEPENDENCIES
   activerecord
   color
+  colorable
   daemons
   geocoder
-  hue!
-  nest_thermostat
+  hue
+  nest_thermostat!
   numbers_in_words
   pg
   pry
@@ -113,4 +116,5 @@ DEPENDENCIES
   sinatra-activerecord
   sqlite3
   uber_api!
+  unicode
   watir-webdriver

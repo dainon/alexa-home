@@ -2,10 +2,12 @@ source 'https://rubygems.org'
 
 gem 'sinatra'
 
-gem 'hue', github: "zachfeldman/hue"
+gem 'hue'#, github: "zachfeldman/hue"
 gem 'color'
+gem 'colorable'
+gem 'unicode'
 
-gem 'nest_thermostat'
+gem 'nest_thermostat', github: "dainon/nest_thermostat"
 
 gem 'pry'
 

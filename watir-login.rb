@@ -11,6 +11,9 @@ class AlexaCrawler
   REFRESH_TIME_IN_MINUTES = 32
 
   def initialize
+    
+    puts "\nStarting Alexa-Home"
+
     self.browser = Watir::Browser.new
     self.last_command = ""
     super
@@ -29,13 +32,14 @@ class AlexaCrawler
 
   def keep_alive
 
+    puts "\nRunning keep_alive"
+
     if browser.url == SETTINGS_URL
       old_browser = self.browser
       self.browser = Watir::Browser.new 
     end
 
     browser.goto LOGIN_URL
-
 
     email = browser.text_field id: 'ap_email'
     email.wait_until_present
@@ -71,12 +75,15 @@ class AlexaCrawler
 end
 
 def start_crawler(last_command = "")
+    puts "Start Crawler"
+    puts last_command
+
 	begin
 		a = AlexaCrawler.new	
     a.last_command = last_command
 		a.keep_alive
 	rescue => error
-    p "Error: #{error}"
+    puts "Error: #{error}"
 		last_command = a.last_command
 		a.kill
 		start_crawler(last_command)
