@@ -38,9 +38,15 @@ This has to be run on the same network your Hue is on, but not necessarily the s
 
 3) Run `bundle install` (I'm assuming you have Ruby 2.0+, using `ruby -v` to find out, if not try rbenv or rvm to upgrade).
 
-3) If you plan on using a Hue setup, press the button on top of your Hue unit
+4) If you plan on using a Hue setup, press the button on top of your Hue unit
 
-3) If you don't want to use all of the existing modules, edit `config.yml` and comment out or remove modules. Should look like this:
+4-a) Create groups in modules/philips_hue_lights.rb file's group lists based on your Philips Hue bridge's light names.
+
+4-b) Replace the group lists in the AlexaPhilipsHue.initialize method with your newly created group lists. Follow the CreateGroup("Bedroom", BEDROOM_LIGHTS) example shown in the code.
+
+4-c) You can leave the CreateGroups lines in the initialization function as it won't recreate the groups.
+
+5) If you don't want to use all of the existing modules, edit `config.yml` and comment out or remove modules. Should look like this:
 
 ```
 ---
@@ -109,6 +115,10 @@ I'd love to get these resolvers/modules done at some point too:
 1) Type `ps aux | grep ruby` at the Terminal to see a list of running Ruby processes
 
 2) If you see the server (app.rb) or the Watir runner (watir-login.rb) and want to stop either of them, type `sudo kill -9 <PID>` , PID corresponding to the program's process ID.
+
+OR
+
+1) ./killscript.sh from the command line. This will kill any instance of Firefox running on your computer unless you modify the script.
 
 ## Contributors
 
