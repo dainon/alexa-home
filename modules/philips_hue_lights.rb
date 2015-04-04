@@ -82,7 +82,7 @@ class AlexaPhilipsHue
 
     matchValue = command.match(GetColorMatchString())
     if (matchValue != nil)
-      color = matchValue[3].to_s
+      color = matchValue[4].to_s
       color = color.gsub(" ", "")
       puts "Found this Color: " + color
       ChangeGroupToColor(command, color)
@@ -116,7 +116,7 @@ class AlexaPhilipsHue
   end 
 
   def GetColorMatchString()
-    return "set (the )?(.*) lights to (" + colorNames[0] + ")"
+    return "set (the )?(.*) lights to (the color )?(" + colorNames[0] + ")"
   end
 
   def AdjustGroupBrightness(command, levelType)

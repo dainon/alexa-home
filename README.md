@@ -74,6 +74,26 @@ Note: Since you can't see the screen if starting a headless Pi: I have the first
 
 2) Nest Thermostat
 
+## Philips Hue Enhancements
+
+The Philips Hue light control is group oriented. The groups must be defined in the initialization function to match your home. An example, based on the lights in my home, is provided for you to review. The light groups will only be created if they are new to your bridge. Having said that, if you have groups from a third party app, you will need to recreate them on the bridge.
+
+Example of how to interact with your lights:
+
+The capital letters denote group names, which you will create for your home. Words in parentheses are optional. This is not a complete list as regular expressions are involved in the code and I tried to keep it somewhat flexible.
+
+Alexa, turn on|off (the) LIVING (room) lights.
+Alexa, turn (the) LIVING (room) lights on|off.
+
+Alexa, set (the) BEDROOM (room) lights to brightness|saturation one hundred fifty five.
+Alexa, set .* brightness|saturation to two hundred fifty five.
+
+Alexa, dim ALL the lights.
+Alexa, brighten ALL the lights.
+
+Alexa, set HALLWAY lights to the color blue.
+Alexa, set the HALLWAY lights to blue.
+
 ## Module Roadmap
 
 I'd love to get these resolvers/modules done at some point too:
